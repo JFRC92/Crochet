@@ -1,0 +1,48 @@
+<div class="slider-h2">
+  <h2>¿Quienes somos?</h2>
+</div>
+  <div><p class="slider-text">Somos un grupo de chicas Jienenses al cuál nos une la pasión por el crochet y el diseño del mismo.<br>
+    Crochet a Trois es el reflejo de una amistad tejida con hilos de pasión, creatividad y raíces andaluzas. 
+    Tres amigas de Jaén nos unimos para crear piezas de crochet con encanto, tradición y diseño. Cada creación está hecha a mano, con dedicación y con una historia detrás.</p></div>
+<div class="slider-window" (mouseenter)="pause()" (mouseleave)="resume()">
+ <!-- <button class="arrow left" (click)="prevSlide()"></button>-->
+
+  <div class="slider-track" [ngStyle]="{ 'animation-play-state': isPaused ? 'paused' : 'running', 'transform': 'translateX(' + translateX + '%)' }">
+    <div class="slide" *ngFor="let image of imagesAll">
+      <img [src]="image.src" [alt]="image.alt" (click)="openModal(image)" />
+    </div>
+  </div>
+
+<!--  <button class="arrow right" (click)="nextSlide()"></button>-->
+</div>
+
+<!-- MODAL -->
+<div class="modal" *ngIf="selectedImage" (click)="closeModal()">
+  <span class="close-btn" (click)="closeModal($event)">✖</span>
+  <img [src]="selectedImage.src" [alt]="selectedImage.alt" class="modal-img" />
+</div>
+
+<aside class="collaborators-section">
+  <h2 class="collaborators-title">Colaboradores</h2>
+  <div class="collaborators-grid">
+    <div class="collaborator-card">
+      <img src="assets/tiendas/zara.jpg" alt="Zara Logo" class="collaborator-image">
+      <h3 class="collaborator-name">Zara</h3>
+      <p class="collaborator-description">Moda y diseño de calidad.</p>
+      <a routerLink="/tienda/zara" class="collaborator-link">Ver tienda</a>
+    </div>
+    <div class="collaborator-card">
+      <img src="assets/tiendas/hm.jpg" alt="H&M Logo" class="collaborator-image">
+      <h3 class="collaborator-name">H&M</h3>
+      <p class="collaborator-description">Estilo accesible y sostenible.</p>
+      <a routerLink="/tienda/hm" class="collaborator-link">Ver tienda</a>
+    </div>
+    <div class="collaborator-card">
+      <img src="assets/tiendas/nike.jpg" alt="Nike Logo" class="collaborator-image">
+      <h3 class="collaborator-name">Nike</h3>
+      <p class="collaborator-description">Ropa deportiva e innovación.</p>
+      <a routerLink="/tienda/nike" class="collaborator-link">Ver tienda</a>
+    </div>
+  </div>
+</aside>
+

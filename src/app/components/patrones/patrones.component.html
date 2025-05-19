@@ -1,0 +1,11 @@
+<section class="patrones-section">
+  <h2 class="patrones-title">Patrones Disponibles</h2>
+  <div class="patrones-grid">
+    <div class="patron-card" *ngFor="let patron of patrones">
+      <img [src]="patron.imagen" [alt]="patron.nombre" class="patron-image">
+      <h3 class="patron-name">{{ patron.nombre }}</h3>
+      <a [routerLink]="patron.link" class="patron-link">Ver patrón</a>
+    </div>
+  </div>
+</section>
+
