@@ -10,15 +10,15 @@ import { CommonModule } from '@angular/common';
 })
 export class ScrollImgComponent implements OnInit {
   images = [
-    { src: '/images/madrid/equipo.jpg', alt: 'Equipo crochet at trois' },
-    { src: '/images/madrid/equipo1.jpg', alt: 'Equipo de crochet luciendo chaleco loopy' },
-    { src: '/images/madrid/mariapose.jpg', alt: 'Maria con top de crochet at trois' },
-    { src: '/images/madrid/aranza.jpg', alt: 'Aranza con top de crochet at trois' },
-    { src: '/images/Loopy1.jpg', alt: 'Alfonso luciendo camisa de crochet at trois' },
-    { src: '/images/bebe.jpg', alt: 'Conjunto zapatos y diadema bebe' },
-    { src: '/images/beaferia.jpg', alt: 'Manto de feria' },
-    { src: '/images/zapas.jpg', alt: 'Zapatillas bebe' },
-    { src: '/images/8m.jpg', alt: 'Cristina representando el 8m con su top' }
+    { src: '/images/madrid/equipo.png', alt: 'Equipo crochet at trois' },
+    { src: '/images/madrid/equipo1.png', alt: 'Equipo de crochet luciendo chaleco loopy' },
+    { src: '/images/madrid/mariapose.png', alt: 'Maria con top de crochet at trois' },
+    { src: '/images/madrid/aranza.png', alt: 'Aranza con top de crochet at trois' },
+    { src: '/images/Loopy1.png', alt: 'Chaleco Loopy de crochet at trois' },
+    { src: '/images/bebe.png', alt: 'Conjunto zapatos y diadema bebe' },
+    { src: '/images/beaferia.png', alt: 'Manto de feria' },
+    { src: '/images/equipo.png', alt: 'Zapatillas bebe' },
+    { src: '/images/8m.png', alt: 'Cristina representando el 8m con su top' }
   ];
 
   imagesAll: { src: string; alt: string }[] = [];

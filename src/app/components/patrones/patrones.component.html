@@ -1,11 +1,56 @@
+<app-logo></app-logo>
+<div class="navbar-container">
+  <app-navigation-bar></app-navigation-bar>
+</div>
 <section class="patrones-section">
-  <h2 class="patrones-title">Patrones Disponibles</h2>
-  <div class="patrones-grid">
-    <div class="patron-card" *ngFor="let patron of patrones">
-      <img [src]="patron.imagen" [alt]="patron.nombre" class="patron-image">
-      <h3 class="patron-name">{{ patron.nombre }}</h3>
-      <a [routerLink]="patron.link" class="patron-link">Ver patrón</a>
+  
+ <!-- <div class="patrones-grid">
+    <div class="flip-card" *ngFor="let patron of patrones">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img [src]="patron.imagen" [alt]="patron.nombre" class="patron-image">
+        </div>
+        <div class="flip-card-back">
+          <h3 class="patron-name">{{ patron.nombre }}</h3>
+          <a [routerLink]="patron.link" class="patron-link">Ver patrón</a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+</section>
+<section class="patron-section">
+  <h2 class="patron-title">Patrones Disponibles</h2>
+  <div class="patron-flex">
+    <div class="patron-card">
+      <img src="images/madrid/cris.png" alt="Cardigan Cris" class="patron-image">
+      <h3 class="patron-name">Cardigan Cris</h3>
+      <p class="patron-description">El cardigan de Cris esta tejido con hilos de enka</p>
+      <a href="https://www.ravelry.com/patterns/library/cardigan-cris" class="patron-link" target="_blank">Ver tienda</a>
+    </div>
+
+    <div class="patron-card">
+      <img src="images/marialopy.png" alt="Maria con chaleco lopy" class="patron-image">
+      <h3 class="patron-name">Chaleco Loopy</h3>
+      <p class="patron-description">Hecho a mano con hilos de Casasol</p>
+      <a href="https://www.ravelry.com/patterns/library/chaleco-loopy" class="patron-link" target="_blank">Ver tienda</a>
+    </div>
+
+    <div class="patron-card">
+      <img src="images/gafas.png" alt="Coches.net" class="patron-image">
+      <h3 class="patron-name">Funda gafas</h3>
+      <p class="patron-description">Funda de crochet para gafas de sol.</p>
+      <a href="https://www.ravelry.com/patterns/library/funda-para-gafas" class="patron-link" target="_blank">Ver tienda</a>
+    </div>
+
+    <div class="patron-card">
+      <img src="images/mariatop.png" alt="Top retales" class="patron-image">
+      <h3 class="patron-name">Top retales</h3>
+      <p class="patron-description">Top retales.</p>
+      <a href="https://www.ravelry.com/patterns/library/top-retales" class="patron-link" target="_blank">Ver tienda</a>
     </div>
   </div>
 </section>
 
+
+
+<!--<app-footer>añadir</app-footer>--> 

@@ -9,14 +9,11 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   background: linear-gradient(to top left, #bae6fd, #fecdd3, #fef3c7);
-
 }
-
 
 /* Navigation Styles */
 .nav-container {
   padding: 1rem 2rem;
-  
   color: #2d3436;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -45,7 +42,6 @@ html, body {
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 1rem;
@@ -55,16 +51,18 @@ html, body {
 .logo img {
   display: block;
   margin: 0;
-  width: 180px; 
+  width: 180px;
   height: 180px;
   border-radius: 95%;
   opacity: 65%;
 }
-.logo-h1{
+
+.logo-h1 {
   display: right;
   float: left;
 }
 
+/* Animaciones del botón hamburguesa con Angular */
 .menu-toggle {
   display: none;
   background: none;
@@ -76,77 +74,88 @@ html, body {
 .menu-bar {
   width: 24px;
   height: 2px;
-  margin-bottom: 6px;
-  transition: transform 0.3s ease;
   background-color: #2d3436;
+  margin: 4px 0;
+  transition: 0.4s ease;
 }
 
+.rotate-bar-top {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hide-bar-middle {
+  opacity: 0;
+}
+
+.rotate-bar-bottom {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menú móvil oculto por defecto */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 250px;
-  
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.97);
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
-}
-
-.mobile-menu-links {
+  padding: 2rem;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
 }
 
+/* Mostrar el menú móvil cuando isMenuOpen es true */
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Links del menú móvil */
 .mobile-link {
   color: #2d3436;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .mobile-link:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   transform: translateX(5px);
 }
 
-/* Header Styles / zona h1 y links*/
+/* Header components ts */
 .page-header {
-  
   padding: 4rem 2rem;
   color: #2d3436;
   text-align: center;
   position: relative;
-  
 }
-
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  
 }
+
 .h1-container {
   display: flex;
-  font-family: "DynaPuff","Poppins", sans-serif;
+  font-family: "DynaPuff", "Poppins", sans-serif;
   font-size: 2.5rem;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-background-image: linear-gradient(to bottom, #f59e0b, #4b5563, #0ea5e9);
-background-clip: text;
--webkit-background-clip: text;
-color: transparent;
-
+  background-image: linear-gradient(to bottom, #f59e0b, #4b5563, #0ea5e9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .header-text {
@@ -165,29 +174,32 @@ color: transparent;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.05em;
-  font-family: "DynaPuff","Poppins", sans-serif;
+  font-family: "DynaPuff", "Poppins", sans-serif;
   text-align: center;
-  
- 
-}
+} 
 
+/* Navegación desktop */
 .desktop-nav {
   display: flex;
   gap: 2rem;
 }
 
 .nav-link {
+  font-family: "Federo", sans-serif;
+  font-size: 1rem;
   color: #2d3436;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.247);
 }
 
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgb(255, 255, 255);
   transform: translateY(-2px);
+  transition: 0s;
+  text-decoration: underline;
 }
 
 .header-description {
@@ -196,16 +208,15 @@ color: transparent;
   margin: 0 auto 2rem;
 }
 
-/* Main Content Styles */
+/* Main Content */
 .main-content {
   flex: 1;
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  
 }
 
-/* Collections Styles */
+/* Grid de colecciones */
 .collections-section {
   max-width: 1200px;
   margin: 0 auto 4rem;
@@ -228,8 +239,6 @@ color: transparent;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   opacity: 0.9;
- 
-  
 }
 
 .collection-card {
@@ -239,11 +248,10 @@ color: transparent;
   text-align: center;
   transition: transform 0.3s ease;
   background-color: rgba(255, 255, 255, 0.3);
-  
-  
 }
+
 .collection-image {
-  width: 200px;
+  width: 180px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -265,18 +273,19 @@ color: transparent;
   line-height: 1.6;
 }
 
-/* slider - h2 y parrafos */
-.slider-h2{
-  font-family: "DynaPuff","Poppins", sans-serif;
+/* Slider */
+.slider-h2 {
+  font-family: "DynaPuff", "Poppins", sans-serif;
   font-size: 1.8rem;
   text-align: center;
 }
 
-.slider-text{
+.slider-text {
   font-family: "Federo", sans-serif;
   font-size: 1.4rem;
   text-align: center;
 }
+
 .slider-window {
   width: 100%;
   overflow: hidden;
@@ -284,7 +293,6 @@ color: transparent;
   border-radius: 10px;
   padding: 10px 0;
 }
-
 
 .slider-track {
   display: flex;
@@ -329,16 +337,6 @@ color: transparent;
     transform: translateX(-50%);
   }
 }
-@keyframes slideLoop {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-
 
 /* MODAL */
 .modal {
@@ -372,6 +370,7 @@ color: transparent;
   cursor: pointer;
 }
 
+/* Animaciones modal */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -390,38 +389,32 @@ color: transparent;
   }
 }
 
-
-
-/* Responsive Styles */
+/* Responsive general */
 @media (max-width: 991px) {
   .collections-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .mobile-menu {
-    display: block;
-  }
-
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
   }
 
   .desktop-nav {
     display: none;
   }
 
-  .collections-grid {
-    grid-template-columns: 1fr;
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
   }
 }
 
+@media (max-width: 640px) {
+  .collections-grid {
+    grid-template-columns: 1fr;
+  }
 
-
-
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

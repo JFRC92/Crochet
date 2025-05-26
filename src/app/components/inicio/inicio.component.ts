@@ -8,6 +8,7 @@ import { ScrollImgComponent } from '../scroll-img/scroll-img.component';
 import { RouterModule } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
 
+
 @Component({
   selector: 'app-inicio',
   imports: [
@@ -17,7 +18,7 @@ import { LogoComponent } from '../logo/logo.component';
     FooterComponent,
     NavigationBarComponent,
     FeaturedComponent,
-    ScrollImgComponent
+    ScrollImgComponent,
     
   ],
   templateUrl: './inicio.component.html',

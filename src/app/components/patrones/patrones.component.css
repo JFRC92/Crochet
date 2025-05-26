@@ -1,63 +1,88 @@
-.patrones-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+.navbar-container {
+  gap: 2rem;
+  padding: 0 2rem;
+  
 }
 
-.patrones-title {
-  text-align: center;
+@media (max-width: 768px) {
+  .patron-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+  
+.patrones-title{
+  font-family:"Federo", sans-serif;
   font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #2d3436;
-  font-family: "Poppins", sans-serif;
+  display: flex;
+  text-align: center;
+}
+.patron-section {
+  font-family: "Federo", sans-serif;
+  padding: 2rem;
+  text-align: center;
 }
 
-.patrones-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+.patron-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.patron-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
 }
 
 .patron-card {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.486); /* blanco con transparencia */
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  width: 320px;
+  backdrop-filter: blur(5px); /* suaviza fondo si hay imagen o color detrás */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* sombra más sutil */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .patron-card:hover {
-  transform: translateY(-5px);
+   transform: translateY(-7px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
 }
 
 .patron-image {
   width: 100%;
-  max-width: 180px;
-  height: auto;
-  margin: 0 auto 1rem;
-  border-radius: 12px;
+  height: 220px; /* más alta */
+  object-fit: cover; /* mejor recorte */
+  margin-bottom: 1.2rem;
+  border-radius: 1.2rem; /* borde redondeado visible */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sutil sombra para realce */
 }
 
 .patron-name {
-  font-size: 1.2rem;
-  color: #2d3436;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin: 0.8rem 0;
+  color: #333;
+}
+
+.patron-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.2rem;
 }
 
 .patron-link {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.4rem 1rem;
-  background-color: #2d3436;
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  border-radius: 0.6rem;
+  transition: background-color 0.3s;
 }
 
 .patron-link:hover {
-  background-color: #636e72;
+  background-color: #0056b3;
 }
+
