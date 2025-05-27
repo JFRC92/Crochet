@@ -1,0 +1,88 @@
+.navbar-container {
+  gap: 2rem;
+  padding: 0 2rem;
+  
+}
+
+@media (max-width: 768px) {
+  .diseno-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+  
+.diseno-title{
+  font-family:"Federo", sans-serif;
+  font-size: 2rem;
+  display: flex;
+  text-align: center;
+}
+.diseno-section {
+  font-family: "Federo", sans-serif;
+  padding: 2rem;
+  text-align: center;
+}
+
+.diseno-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.diseno-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.diseno-card {
+  background-color: rgba(255, 255, 255, 0.486); /* blanco con transparencia */
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  width: 320px;
+  backdrop-filter: blur(5px); /* suaviza fondo si hay imagen o color detrás */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* sombra más sutil */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.diseno-card:hover {
+   transform: translateY(-7px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
+}
+
+.diseno-image {
+  width: 100%;
+  height: 220px; /* más alta */
+  object-fit: cover; /* mejor recorte */
+  margin-bottom: 1.2rem;
+  border-radius: 1.2rem; /* borde redondeado visible */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sutil sombra para realce */
+}
+
+.diseno-name {
+  font-size: 1.4rem;
+  margin: 0.8rem 0;
+  color: #333;
+}
+
+.diseno-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.diseno-link {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.6rem;
+  transition: background-color 0.3s;
+}
+
+.diseno-link:hover {
+  background-color: #0056b3;
+}
+
