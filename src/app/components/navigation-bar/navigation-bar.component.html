@@ -13,19 +13,5 @@
       <a class="nav-link" routerLink="/diseno">Diseños</a>
     </nav>
 
-   <!-- Botón hamburguesa -->
-    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Abrir menú">
-      <span class="menu-bar" [class.rotate-bar-top]="isMenuOpen"></span>
-      <span class="menu-bar" [class.hide-bar-middle]="isMenuOpen"></span>
-      <span class="menu-bar" [class.rotate-bar-bottom]="isMenuOpen"></span>
-    </button>
-  </div>
-
-  <!-- Menú móvil (solo se muestra en móviles/tablets) -->
-  <div class="mobile-menu" [class.open]="isMenuOpen">
-    <a class="mobile-link" routerLink="/" (click)="closeMenu()">Inicio</a>
-    <a class="mobile-link" routerLink="/patrones" (click)="closeMenu()">Patrones</a>
-    <a class="mobile-link" routerLink="/contact" (click)="closeMenu()">Contacto</a>
-  </div>
 
 
