@@ -11,9 +11,11 @@
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+  font-family: "Federo", sans-serif;
+  font-size: 1.3rem;
+  max-width: 90%;
+  padding-left: 1rem;
+  text-align: left;
 }
 
 .page-wrapper {
@@ -44,4 +46,25 @@
 
 .footer-link:hover {
   color: #ff9a9e;
+}
+.social-icons {
+  display: flex;
+  justify-content: flex-end;  
+  align-items: flex-start;    
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  
+  
+}
+
+.social-icons svg {
+  width: 60px;      
+  height: 32px;
+  color: #ec4899;   
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons svg:hover {
+  color: #f472b6;   
+  transform: scale(1.2);
 }

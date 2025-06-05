@@ -19,21 +19,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./patrones.component.css']
 })
 export class PatronesComponent {
-  patrones = [
-       {
-      nombre: 'Patrón 1',
-      imagen: 'images/madrid/cris.png',
-      link: '/patrones/patron-1'
-    },
-    {
-      nombre: 'Patrón 2',
-      imagen: 'assets/patron2.jpg',
-      link: '/patrones/patron-2'
-    }
-    // Agrega más patrones aquí
-  ];
-
-
   
 
 }

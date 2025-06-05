@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
 import { LogoComponent } from '../logo/logo.component';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { LogoComponent } from '../logo/logo.component';
     RouterModule,
     LogoComponent,
     NavigationBarComponent,
+    FooterComponent,
     
   ],
 

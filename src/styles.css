@@ -121,3 +121,13 @@ html, body {
   margin: 0 auto;
   padding: 2rem;
 }
+
+/* Móvil */
+@media (max-width: 768px) {
+  .nav-content,
+  .nav-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
