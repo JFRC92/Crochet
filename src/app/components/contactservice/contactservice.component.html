@@ -1,0 +1,133 @@
+<a routerLink="/">
+  <app-logo></app-logo>
+</a>
+
+
+<div class="container">
+  <div class="form-wrapper" @fadeInUp>
+    
+    <!-- Header -->
+    <header class="form-header">
+      <h1 class="form-title">Contáctanos</h1>
+      <p class="form-subtitle">Nos encantaría saber de ti. Envíanos un mensaje y te responderemos pronto.</p>
+    </header>
+
+    <!-- Main Form -->
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      
+      <!-- Form Body -->
+      <div class="form-body">
+        
+        <!-- Name Field -->
+        <div class="form-group" 
+             [class.form-group--error]="isFieldInvalid('name')"
+             @slideIn>
+          <label class="form-label">Nombre:</label>
+          <input 
+            type="text" 
+            formControlName="name" 
+            class="form-input"
+            placeholder="">
+          <div class="form-error" *ngIf="isFieldInvalid('name')">
+            {{ getFieldError('name') }}
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group" 
+             [class.form-group--error]="isFieldInvalid('email')"
+             @slideIn>
+          <label class="form-label">Correo electrónico:</label>
+          <input 
+            type="email" 
+            formControlName="email" 
+            class="form-input"
+            placeholder="">
+          <div class="form-error" *ngIf="isFieldInvalid('email')">
+            {{ getFieldError('email') }}
+          </div>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="form-group" @slideIn>
+          <label class="form-label">Teléfono: (opcional)</label>
+          <input 
+            type="tel" 
+            formControlName="phone" 
+            class="form-input"
+            placeholder="">
+        </div>
+
+        <!-- Subject Field -->
+        <div class="form-group" 
+             [class.form-group--error]="isFieldInvalid('subject')"
+             @slideIn>
+          <label class="form-label">Asunto:</label>
+          <input 
+            type="text" 
+            formControlName="subject" 
+            class="form-input"
+            placeholder="">
+          <div class="form-error" *ngIf="isFieldInvalid('subject')">
+            {{ getFieldError('subject') }}
+          </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="form-group" 
+             [class.form-group--error]="isFieldInvalid('message')"
+             @slideIn>
+          <label class="form-label">Mensaje:</label>
+          <textarea 
+            formControlName="message" 
+            class="form-textarea"
+            placeholder=""
+            rows="5">
+          </textarea>
+          <div class="form-error" *ngIf="isFieldInvalid('message')">
+            {{ getFieldError('message') }}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Form Footer -->
+      <div class="form-footer">
+        <!-- Submit Button -->
+        <button 
+          type="submit" 
+          class="form-button"
+          [class.form-button--loading]="isSubmitting"
+          [disabled]="contactForm.invalid || isSubmitting">
+          Enviar
+
+          <span *ngIf="!isSubmitting">Enviar mensaje</span>
+          <span *ngIf="isSubmitting" class="loading-content">
+            <span class="spinner"></span>
+            Enviando...
+          </span>
+        </button>
+
+        <!-- Messages -->
+        <div class="form-messages">
+          <div 
+            class="success-message" 
+            *ngIf="showSuccessMessage"
+            @fadeInOut>
+            ¡Mensaje enviado con éxito! Te contactaremos pronto.
+          </div>
+          
+          <div 
+            class="error-message" 
+            *ngIf="showErrorMessage"
+            @fadeInOut>
+            Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
