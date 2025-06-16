@@ -1,0 +1,19 @@
+.fixed-svg {
+  position: fixed; 
+  top: 30%;
+  right: 45px; /* distancia lateral */
+  transform: translateY(-50%);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.fixed-svg svg {
+  width: 48px;
+  height: 48px;
+  stroke: #ffb6c1; 
+  transition: stroke 0.2s;
+}
+
+.fixed-svg svg:hover {
+  stroke: #fc8ac3; 
+}

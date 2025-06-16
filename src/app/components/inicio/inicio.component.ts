@@ -7,6 +7,7 @@ import { FeaturedComponent } from '../featured/featured.component';
 import { ScrollImgComponent } from '../scroll-img/scroll-img.component';
 import { RouterModule } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
+import { UserIconComponent } from '../../shared/user-icon/user-icon.component';
 
 
 @Component({
@@ -19,6 +20,7 @@ import { LogoComponent } from '../logo/logo.component';
     NavigationBarComponent,
     FeaturedComponent,
     ScrollImgComponent,
+    UserIconComponent,
     
   ],
   templateUrl: './inicio.component.html',

@@ -1,0 +1,90 @@
+<a routerLink="/">
+  <app-logo></app-logo>
+</a>
+
+<div class="container">
+  <div class="form-wrapper">
+    <header class="form-header">
+      <h1 class="form-title">Iniciar Sesión</h1>
+      <p class="form-subtitle">Bienvenido de vuelta. Ingresa tus credenciales para continuar.</p>
+    </header>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="login-form" autocomplete="off">
+      <div class="form-body">
+        <div class="form-group">
+          <label class="form-label">Correo electrónico</label>
+          <input 
+            type="email" 
+            name="email" 
+            [(ngModel)]="loginData.email"
+            required
+            class="form-input"
+            placeholder=""
+            [disabled]="isSubmitting"
+            #email="ngModel"
+          >
+          <div class="form-error" *ngIf="email.invalid && (email.dirty || email.touched)">
+            El correo es obligatorio.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Contraseña</label>
+          <div class="input-wrapper">
+            <input 
+              [type]="showPassword ? 'text' : 'password'" 
+              name="password"
+              [(ngModel)]="loginData.password"
+              required
+              minlength="6"
+              class="form-input password-input"
+              placeholder=""
+              [disabled]="isSubmitting"
+              #password="ngModel"
+            >
+            <button type="button" class="password-toggle" (click)="togglePasswordVisibility()" tabindex="-1"> 
+              <svg *ngIf="!showPassword" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg *ngIf="showPassword" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+          <div class="form-error" *ngIf="password.invalid && (password.dirty || password.touched)">
+            La contraseña es obligatoria (mínimo 6 caracteres).
+          </div>
+        </div>
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input 
+              type="checkbox" 
+              [(ngModel)]="loginData.rememberMe" 
+              name="rememberMe"
+              class="checkbox-input"
+              [disabled]="isSubmitting"
+            >
+            <span class="checkbox-custom"></span>
+            <span class="checkbox-text">Recordarme</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button 
+          type="submit" 
+          class="form-button"
+          [disabled]="isSubmitting || loginForm.invalid">
+          <span *ngIf="!isSubmitting">Iniciar Sesión</span>
+          <span *ngIf="isSubmitting" class="loading-content">
+            <span class="spinner"></span>
+            Iniciando sesión...
+          </span>
+        Enviar</button>
+        <div class="form-messages" *ngIf="showErrorMessage">
+          <div class="error-message">{{ errorMessage }}</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
