@@ -1,59 +1,94 @@
-# Crochet
+# 🧶 Crochet A Trois
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+Página web desarrollada con HTML, CSS, TypeScript y Angular version 19.2.11.
 
-## Development server
+## 📖 Descripción
 
-To start a local development server, run:
+La idea de este TFG nace de la necesidad de mi pareja y sus amigas por tener una web donde puedan ver sus diseños y patrones de crochet.
+Para ello hice una web minimalista y enfocada a sus necesidades, donde está todo de manera estructurada para que el usuario lo entienda a la primera sin necesidad de complicaciones.
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## 🏗️ Estado del proyecto.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Funcionalidades básicas del frontend implementadas (páginas, navegación, login, formulario).
+- Backend Symfony levantado con Docker.
+- Falta implementar: API básica funcional, validaciones avanzadas, tests, optimizaciones y despliegue en producción.
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## ✒️Instalación y puesta en marcha
 
-```bash
-ng generate --help
-```
+Para generar el proyecto, ejecuta estos pasos:
 
-## Building
+1º Clona el repositorio
 
-To build the project run:
+git@github.com:JFRC92/TfgWebCrochet.git
 
-```bash
-ng build
-```
+2º Levantar los contenedores en Docker
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Docker compose up -d
 
-## Running unit tests
+Esto nos construirá y levantará los servicios para el frontend y el backend
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+3º Accede a los servicios
 
-```bash
-ng test
-```
+- Frontend Angular: http://localhost:4200
+- Backend Symfony: http://localhost:8000
+  
+4º Comandos Útiles
 
-## Running end-to-end tests
+- Ver contenedores - docker-compose ps
+- Acceder a un contenedor - docker exec -it <nombre_contenedor> bash
+- Detener los servicios - docker-compose down
+- Diagnóstico de puertos en uso - lsof -i :5432
+- Matar proceso por PID - kill -9 < PID > 
 
-For end-to-end (e2e) testing, run:
+## 💻 Estructura de carpetas proyecto Angular ( src/ app/ components )
 
-```bash
-ng e2e
-```
+| 📂 Componente    | 📝 Descripción breve                                         |
+| ---------------- | ------------------------------------------------------------ |
+| `contactservice` | Lógica o interfaz relacionada con el formulario de contacto. |
+| `diseno`         | Módulo de diseño gráfico o presentación visual.              |
+| `featured`       | Sección de elementos destacados o promociones.               |
+| `footer`         | Pie de página del sitio web.                                 |
+| `header`         | Encabezado general del sitio.                                |
+| `inicio`         | Página principal o landing del sitio.                        |
+| `login`          | Formulario y lógica de inicio de sesión.                     |
+| `logo`           | Componente gráfico del logotipo.                             |
+| `navigation-bar` | Barra de navegación del sitio.                               |
+| `not-found`      | Página de error 404.                                         |
+| `patrones`       | Galería o listado de patrones (probablemente de diseño).     |
+| `scroll-img`     | Imagen o galería con efecto de desplazamiento.               |
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Estructura backend con Symfony y Docker ( /symfony-backend )
 
-## Additional Resources
+| 📂 Carpeta / Archivo | 📝 Descripción                                      |
+| -------------------- | --------------------------------------------------- |
+| `src/`               | Código fuente PHP del proyecto Symfony.             |
+| `config/`            | Configuración del framework y servicios.            |
+| `public/`            | Punto de entrada (equivale a `index.php`).          |
+| `var/`               | Caché, logs y archivos generados.                   |
+| `vendor/`            | Dependencias instaladas por Composer.               |
+| `.env`               | Configuración de entorno (DB, mail, etc.).          |
+| `Dockerfile`         | Define cómo construir la imagen Docker del backend. |
+| `docker-compose.yml` | Orquesta servicios (PHP, DB, Nginx, etc.).          |
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🎨 Estilos CSS
+
+El diseño de la web está construido con CSS puro, siguiendo un estilo minimalista y moderno, algunas de sus características son:
+
+- Estilo responsive adaptado a dispositivos móviles.
+- Uso de glassmorphism tanto en el formulario de contacto, como en el login.
+- Animaciones sutiles con '@keyframes' y ':hover'.
+- Separación de estilos por componentes y estilos globales.
+
+## 🔗 Enlaces útiles
+
+- [Documentación Angular](https://angular.io/docs)
+- [Documentación Symfony](https://symfony.com/doc/current/index.html)
+- [Docker](https://docs.docker.com/)
+
+## 📄 Licencia
+
+Este proyecto está bajo licencia MIT - ver archivo LICENSE para detalles.
+
